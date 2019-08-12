@@ -23,9 +23,11 @@ export default class Surveyor extends React.Component {
     }
 
     handleSubmit = () => {
+        let simulationId = this.props.params.id;
+        let url = this.props.interview.link + "/" + simulationId
         this.props.actions
             .saveAnswers(this.state.answered)
-            .then(() => hashHistory.push(this.props.interview.link));
+            .then(() => hashHistory.push(url));
     };
 
     handleInputChange = e => this.setState({ currentInput: e.target.value });

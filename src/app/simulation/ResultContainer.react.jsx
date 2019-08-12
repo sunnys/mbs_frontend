@@ -21,7 +21,8 @@ import FlexBox from "globals/flexbox/FlexBox.react";
 
 export class ResultContainer extends React.Component {
     componentDidMount() {
-        this.props.actions.endSim();
+        console.log("Simulation Id: ", this.props.params.id);
+        this.props.actions.endSim(this.props.params.id);
         // if (_.startsWith(this.props.simParams.lastLocation, "operations"))
         //     this.props.actions.setLastLocation("result").then(() => {
         //         if (!this.props.simParams.simOver) this.props.actions.endSim();
@@ -57,8 +58,8 @@ const mapDispatchToProps = /* istanbul ignore next - redux function */ dispatch 
             setLastLocation: location => {
                 return dispatch(SimManagerAction.setLastLocation(location));
             },
-            endSim: () => {
-                return dispatch(SimManagerAction.endSim());
+            endSim: (simulationId) => {
+                return dispatch(SimManagerAction.endSim(simulationId));
             }
         }
     };

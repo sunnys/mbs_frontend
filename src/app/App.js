@@ -153,7 +153,7 @@ class App extends React.Component {
                             onEnter={this.requireLogin}
                         />
                         <Route
-                            path="/result"
+                            path="/result/:id"
                             component={LoadableResult}
                             onEnter={this.requireLogin}
                         />

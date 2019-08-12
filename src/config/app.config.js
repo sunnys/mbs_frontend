@@ -16,8 +16,6 @@ import {
     headerStyle,
     textStyle,
     textInputStyle,
-    navbarStyle,
-    footerStyle
 } from "./configPanel/config.design";
 
 let fonts = _.union(
@@ -26,19 +24,11 @@ let fonts = _.union(
 
 export const AppConfig = {
     language: "en",
-    googleAPIkey: "", // My key: AIzaSyBQdIL2W7U0c49P-Zrqo0yhFyZ4XpFWCSg . Okay to use for testing, not for client deployments
     secretKey: "p20o20e13",
     axiosEnabled: true, // if false, then please set change request headers on each request in devise_token_auth.rb file as it won't work.
     clientApp: userInterface.clientApp,
     authentication: userInterface.authentication,
     registration: userInterface.registration,
-    languageSelection: userInterface.languageSelection,
-    searchEnabled: userInterface.searchEnabled,
-    ttsEnabled: userInterface.ttsEnabled,
-    startOnHome: userInterface.startOnHome,
-    ilt: userInterface.ilt,
-    social: userInterface.social,
-    completionThreshold: 80,
     isMobile: window.isCordova ? window.isCordova : false,
     apiUrls: apiUrls,
     endpoints: endpoints,
@@ -78,22 +68,6 @@ export const AppConfig = {
         fontFamily: [fonts[1], fonts[3]]
     },
     textInputStyle: textInputStyle,
-    navbar: {
-        logoAlign: navbarStyle.logoAlign,
-        icons: navbarStyle.logoAlign === "left" ? "right" : "left",
-        height: userInterface.subNavBar ? 90 : 60,
-        landscapeActive: navbarStyle.landscapeActive,
-        hasSubNavBar: userInterface.subNavBar,
-        sublogoAlign: navbarStyle.sublogoAlign,
-        sublogoText: navbarStyle.sublogoText,
-        avatar: navbarStyle.avatar
-    },
-    footer: {
-        isThere: userInterface.footer.isThere,
-        text: userInterface.footer.text,
-        hasLogo: userInterface.footer.hasLogo,
-        logoAlign: footerStyle.logoAlign
-    },
     pageStyle: {
         ...pageStyle
     },

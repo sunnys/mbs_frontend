@@ -28,7 +28,7 @@ const setLastLocation = location => {
     };
 };
 
-const endSim = () => {
+const endSim = (simulationId) => {
     return (dispatch, getState, Request) => {
         let questions = getState().questions;
         let simParams = getState().simParams;
@@ -114,8 +114,8 @@ const endSim = () => {
                     questions: questions,
                     simParams: simParams
                 };
-                let body = { user_id: userId, user_data: data };
-                return Request.fetch(getAppConfig().endpoints.userDataPath, {
+                let body = { user_id: userId, simulation_id: simulationId, user_data: data };
+                return Request.fetch(getAppConfig().endpoints.simulationResultPath, {
                     method: "POST",
                     body: JSON.stringify(body)
                 });

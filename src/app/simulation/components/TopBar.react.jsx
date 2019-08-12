@@ -17,12 +17,6 @@ export default class TopBar extends React.Component {
       height: "128px",
       zIndex: "9"
     };
-    // let presenterImage = {
-    //   position: "absolute",
-    //   right: "10px",
-    //   top: "5px",
-    //   width: "20%"
-    // };
     let progressSection = {
       position: "relative",
       top: this.props.cost === undefined ? "24px" : "-9px",

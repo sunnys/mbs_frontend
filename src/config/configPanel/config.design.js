@@ -86,13 +86,3 @@ export const textInputStyle = {
     fontSize: "1.2em",
     color: "#000000"
 };
-export const navbarStyle = {
-    logoAlign: "left",
-    sublogoAlign: "right",
-    sublogoText: "",
-    avatar: "assets/images/configurable/avatar.jpg",
-    landscapeActive: "false"
-};
-export const footerStyle = {
-    logoAlign: "right"
-};

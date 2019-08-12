@@ -11,6 +11,5 @@ export const endpoints = {
     passwordResetPath: "/api/v1/auth/password",
     passwordUpdatePath: "/api/v1/auth/password",
     tokenValidationPath: "/api/v1/auth/validate_token",
-    userDataPath: "/api/v1/user_data_details",
     simulationResultPath: "/api/v1/simulation_results",
 };

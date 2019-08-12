@@ -270,14 +270,8 @@ class AxiosRequest {
         if (
             url === configUrl.emailSignInPath ||
             url === configUrl.emailForgotPasswPath ||
-            url === configUrl.wsFedLogin ||
-            url === configUrl.omniauthGoogle ||
-            url === configUrl.omniauthfacebook ||
-            url === configUrl.ticket ||
             url === configUrl.emailSignInPathBypass ||
-            url === configUrl.emailRegistrationPath ||
-            url === configUrl.logContactPath ||
-            url === configUrl.simulationResultPath
+            url === configUrl.emailRegistrationPath
         ) {
             return Promise.resolve(0);
         } else {
