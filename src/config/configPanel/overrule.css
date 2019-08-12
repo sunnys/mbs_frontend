@@ -1,0 +1,12 @@
+
+.ui.primary.button,
+.ui.primary.buttons .button {
+    background: #c23b22 !important;
+    color: #ffffff !important;
+}
+
+.ui.secondary.button,
+.ui.secondary.buttons .button {
+    background: #ffc900 !important;
+    color: #000000 !important;
+}

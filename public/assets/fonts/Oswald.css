@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    src: url(Oswald_400_normal.eot); /* {{embedded-opentype-gf-url}} */
+    src: local('☺'),
+        url(Oswald_400_normal.eot?#iefix) format('embedded-opentype'), /* {{embedded-opentype-gf-url}} */
+        url(Oswald_400_normal.woff) format('woff'), /* http://fonts.gstatic.com/s/oswald/v14/-g5pDUSRgvxvOl5u-a_WHw.woff */
+        url(Oswald_400_normal.ttf) format('truetype'), /* http://fonts.gstatic.com/s/oswald/v14/lXoKq2PC8Z_S1wl-BwvrB-vvDin1pK8aKteLpeZ5c0A.ttf */
+        url(Oswald_400_normal.svg#Oswald_400_normal) format('svg'); /* http://fonts.gstatic.com/l/font?kit=lvX543xfU1-yV4ZhBKmRFw&skey=653237e53512d0de&v=v14#Oswald */
+}
