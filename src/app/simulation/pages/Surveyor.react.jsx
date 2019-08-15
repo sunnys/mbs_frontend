@@ -35,7 +35,7 @@ export default class Surveyor extends React.Component {
         if (e.keyCode === 9) e.preventDefault();
     };
 
-    saveAnswer = (questionId, q, option, score) => {
+    saveAnswer = (questionId, q, option, attributes, value, competencies) => {
         let answered = _.cloneDeep(this.state.answered);
         let thisAnswer = _.find(answered, { questionId: questionId });
         if (thisAnswer !== undefined)
@@ -44,7 +44,9 @@ export default class Surveyor extends React.Component {
             questionId: questionId,
             question: q,
             response: option === undefined ? this.state.currentInput : option,
-            score: score
+            value: value,
+            competencies: competencies,
+            attributes: attributes
         });
         if (!(this.state.currentInput === "" && option === undefined))
             this.setState({ answered: answered });
@@ -52,6 +54,7 @@ export default class Surveyor extends React.Component {
 
     render() {
         let questionCards = _.map(this.state.questions, (elm, idx) => {
+            console.log(elm.options !== undefined)
             return (
                 <div
                     key={`question-${idx}`}
@@ -92,8 +95,9 @@ export default class Surveyor extends React.Component {
                                     onKeyDown={this.handleKeyDown}
                                 />
                             )}
-                            {elm.options.length > 0 &&
+                            {elm.options !== undefined &&
                                 _.map(elm.options, (option, idx2) => {
+                                    console.log(option);
                                     let thisAnswer = _.find(
                                         this.state.answered,
                                         {
@@ -110,13 +114,15 @@ export default class Surveyor extends React.Component {
                                                     ? "brown"
                                                     : "grey"
                                             }
-                                            content={option[0]}
+                                            content={option.option}
                                             onClick={() =>
                                                 this.saveAnswer(
                                                     elm.questionId,
                                                     elm.question,
-                                                    option[1],
-                                                    option[2]
+                                                    option.option,
+                                                    option.attributes,
+                                                    option.value,
+                                                    option.competencies
                                                 )
                                             }
                                             style={{ marginBottom: "5px" }}

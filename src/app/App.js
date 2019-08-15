@@ -58,6 +58,20 @@ const LoadableResult = Loadable({
         ),
     loading: Loading
 });
+const LoadableUserList = Loadable({
+    loader: () =>
+        import(
+            "app/simulation/UserListContainer.react" /* webpackChunkName: "userlist" */
+        ),
+    loading: Loading
+});
+const LoadableAnalytics = Loadable({
+    loader: () =>
+        import(
+            "app/simulation/AnalyticsContainer.react" /* webpackChunkName: "analytics" */
+        ),
+    loading: Loading
+});
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -157,6 +171,16 @@ class App extends React.Component {
                             component={LoadableResult}
                             onEnter={this.requireLogin}
                         />
+                        <Route
+                        path="/analytics"
+                        component={LoadableUserList}
+                        onEnter={this.requireLogin}
+                    />
+                    <Route
+                        path="/analytics/:id"
+                        component={LoadableAnalytics}
+                        onEnter={this.requireLogin}
+                    />
                     </Router>
                 </div>
             </div>

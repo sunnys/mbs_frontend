@@ -34,58 +34,280 @@ let interviews = {
         link: "/result",
         questions: [
             {
-                questionId: "A1",
-                question: "Tell us your full name",
-                options: []
-            },
-            {
-                questionId: "A2",
-                question: "Which college are you from?",
-                options: []
-            },
-            {
-                questionId: "A3",
-                question: "Describe yourself in one sentence ",
-                options: []
-            },
-            {
                 questionId: "A4",
-                question:
-                    "Why do you think you would make a good entrepreneur?",
-                options: [
-                    ["I am persuasive", "Persuasive", 0],
-                    ["I am unemotional", "Unemotional", 0],
-                    ["I am self-confident", "Self-confident", 1],
-                    ["I am energetic", "Energetic", 2]
-                ]
+                question: "Why do you think you would make a good entrepreneur?",
+                options: {
+                    0:
+                    {
+                        option: "I am persuasive",
+                        value: {
+                            analytical: 0, 
+                            creative: 1, 
+                            methodical: 0, 
+                            frugal: 1
+                        },
+                        competencies: {
+                            problem_solving: 0, 
+                            decision_making: 1, 
+                            balanced_approach: 0, 
+                            time_management: 1, 
+                            resourcefulness: 1
+                        },
+                        attributes: ["persuasive"]
+                    },
+                    1:
+                    {
+                        option: "I am unemotional",
+                        value: {
+                            analytical: 0, 
+                            creative: 1, 
+                            methodical: 0, 
+                            frugal: 1
+                        },
+                        competencies: {
+                            problem_solving: 0, 
+                            decision_making: 1, 
+                            balanced_approach: 0, 
+                            time_management: 1, 
+                            resourcefulness: 1
+                        },
+                        attributes: ["unemotional"]
+                    },
+                    2:
+                    {
+                        option: "I am self-confident",
+                        value: {
+                            analytical: 0, 
+                            creative: 1, 
+                            methodical: 0, 
+                            frugal: 1
+                        },
+                        competencies: {
+                            problem_solving: 0, 
+                            decision_making: 1, 
+                            balanced_approach: 0, 
+                            time_management: 1, 
+                            resourcefulness: 1
+                        },
+                        attributes: ["self-confident"]
+                    },
+                    3:
+                    {
+                        option: "I am energetic",
+                        value: {
+                            analytical: 0, 
+                            creative: 1, 
+                            methodical: 0, 
+                            frugal: 1
+                        },
+                        competencies: {
+                            problem_solving: 0, 
+                            decision_making: 1, 
+                            balanced_approach: 0, 
+                            time_management: 1, 
+                            resourcefulness: 1
+                        },
+                        attributes: ["energetic"]
+                    }
+                }
             },
             {
                 questionId: "A5",
                 question: "What is your greatest weakness?",
-                options: [
-                    ["I am too stern", "Stern", 0],
-                    ["I am too inhibited", "Inhibited", 0],
-                    ["I am too restless", "Restless", 1],
-                    ["I am too stubborn", "Stubborn", 2]
-                ]
+                options: {
+                    0:
+                    {
+                        option: "I am too stern",
+                        value: {
+                            analytical: 1, 
+                            creative: 1, 
+                            methodical: 1, 
+                            frugal: 1
+                        },
+                        competencies: {
+                            problem_solving: 0, 
+                            decision_making: 1, 
+                            balanced_approach: 0, 
+                            time_management: 1, 
+                            resourcefulness: 1
+                        },
+                        attributes: ["Stern"]
+                    },
+                    1:
+                    {
+                        option: "I am too inhibited",
+                        value: {
+                            analytical: 0, 
+                            creative: 1, 
+                            methodical: 0, 
+                            frugal: 1
+                        },
+                        competencies: {
+                            problem_solving: 0, 
+                            decision_making: 1, 
+                            balanced_approach: 0, 
+                            time_management: 1, 
+                            resourcefulness: 1
+                        },
+                        attributes: ["Inhibited"]
+                    },
+                    2:
+                    {
+                        option: "I am too restless",
+                        value: {
+                            analytical: 0, 
+                            creative: 1, 
+                            methodical: 0, 
+                            frugal: 1
+                        },
+                        competencies: {
+                            problem_solving: 0, 
+                            decision_making: 1, 
+                            balanced_approach: 0, 
+                            time_management: 1, 
+                            resourcefulness: 1
+                        },
+                        attributes: ["Restless"]
+                    },
+                    3:
+                    {
+                        option: "I am too stubborn",
+                        value: {
+                            analytical: 0, 
+                            creative: 1, 
+                            methodical: 0, 
+                            frugal: 1
+                        },
+                        competencies: {
+                            problem_solving: 0, 
+                            decision_making: 1, 
+                            balanced_approach: 0, 
+                            time_management: 1, 
+                            resourcefulness: 1
+                        },
+                        attributes: ["Stubborn"]
+                    }
+                }
             },
             {
                 questionId: "A6",
                 question: "What is your biggest strength?",
-                options: [
-                    ["I am tactful", "Tactful", 0],
-                    ["I am clear-thinking", "Clear-thinking", 0],
-                    ["I am forward-looking", "Forward-looking", 1],
-                    ["I am courageous", "Courageous", 2]
-                ]
+                options: {
+                    0:
+                    {
+                        option: "I am tactful",
+                        value: {
+                            analytical: 1, 
+                            creative: 1, 
+                            methodical: 1, 
+                            frugal: 1
+                        },
+                        competencies: {
+                            problem_solving: 0, 
+                            decision_making: 1, 
+                            balanced_approach: 0, 
+                            time_management: 1, 
+                            resourcefulness: 1
+                        },
+                        attributes: ["Tactful"]
+                    },
+                    1:
+                    {
+                        option: "I am clear-thinking",
+                        value: {
+                            analytical: 0, 
+                            creative: 1, 
+                            methodical: 0, 
+                            frugal: 1
+                        },
+                        competencies: {
+                            problem_solving: 0, 
+                            decision_making: 1, 
+                            balanced_approach: 0, 
+                            time_management: 1, 
+                            resourcefulness: 1
+                        },
+                        attributes: ["Clear-thinking"]
+                    },
+                    2:
+                    {
+                        option: "I am forward-looking",
+                        value: {
+                            analytical: 0, 
+                            creative: 1, 
+                            methodical: 1, 
+                            frugal: 1
+                        },
+                        competencies: {
+                            problem_solving: 0, 
+                            decision_making: 1, 
+                            balanced_approach: 0, 
+                            time_management: 1, 
+                            resourcefulness: 1
+                        },
+                        attributes: ["Forward-looking"]
+                    },
+                    3:
+                    {
+                        option: "I am courageous",
+                        value: {
+                            analytical: 0, 
+                            creative: 1, 
+                            methodical: 0, 
+                            frugal: 1
+                        },
+                        competencies: {
+                            problem_solving: 1, 
+                            decision_making: 1, 
+                            balanced_approach: 1, 
+                            time_management: 1, 
+                            resourcefulness: 1
+                        },
+                        attributes: ["Courageous"]
+                    }
+                }
             }
         ]
     }
 };
+
+let simulations = {
+    1: {
+        title: "Sparta Arena P&G Grid",
+        headline: "Sparta Arena P&G Grid",
+        content: "Download following excel sheet fill it in and re-upload it here",
+        buttonText: "Download",
+        link: "assets/samples/SpartaArenaPGGrid_Final_5Feb.xlsm",
+        analytics: {
+            endpoints: {
+                1: {
+                    name: "cprp",
+                },
+                2: {
+                    name: "outlay",
+                },
+                3: {
+                    name: "pt",
+                },
+                4: {
+                    name: "grp",
+                },
+                5: {
+                    name: "timeSlot",
+                },
+            },
+            score: {
+                name: "Score",
+                cell: "G3"
+            }
+        }
+    }
+}
 
 export {
     welcomeText,
     resultText,
     cutScenes,
     interviews,
+    simulations
 };
