@@ -175,6 +175,23 @@ class AuthenticationContainer extends React.Component {
                                 />
                                 <h1>Register</h1>
                                 <Form.Field>
+                                    <label>Name</label>
+                                    <Popup
+                                        trigger={
+                                            <Input
+                                                fluid
+                                                placeholder="Enter your Name"
+                                                onChange={this.updateName}
+                                            />
+                                        }
+                                        header="Name"
+                                        content={
+                                            "Please enter your Name"
+                                        }
+                                        on="focus"
+                                    />
+                                </Form.Field>
+                                <Form.Field>
                                     <label>Email Id</label>
                                     <Popup
                                         trigger={

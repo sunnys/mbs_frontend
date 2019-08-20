@@ -1,6 +1,6 @@
 export const apiUrls = {
-    apiUrl: "http://localhost:3005/",
-    assetUrl: "http://localhost:3005/",
+    apiUrl: "http://mbs.techknowzeal.com/",
+    assetUrl: "http://mbs.techknowzeal.com/",
     assetLib: "assets"
 };
 export const endpoints = {

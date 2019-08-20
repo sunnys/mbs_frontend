@@ -205,6 +205,7 @@ function register(name, email, password, confirm) {
                     .value()
             );
             formData.append("password", password);
+            formData.append("name", name);
             formData.append("password_confirmation", password);
             return Request.fetch(emailRegistrationPath, {
                 method: "POST",

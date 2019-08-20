@@ -55,13 +55,7 @@ export default class Result extends React.Component {
                             </Grid.Column>
                             <Grid.Column width={12}>
                                 <TopBar
-                                    constraint={`Acquistion valuation of Rs. ${Math.max(
-                                        parseInt(
-                                            this.state.finalValuation / 100000,
-                                            0
-                                        ) / 100,
-                                        0.25
-                                    )} crores`}
+                                    constraint={`Simulation Over`}
                                     image={
                                         "/assets/images/configurable/money.png"
                                     }
@@ -70,32 +64,7 @@ export default class Result extends React.Component {
                                     }
                                     marginTop={"40px"}
                                 />
-                                <Segment
-                                    inverted
-                                    style={{
-                                        textAlign: "center",
-                                        fontSize: "2em",
-                                        position: "relative",
-                                        zIndex: "2"
-                                    }}
-                                >
-                                    You made{" "}
-                                    {parseInt(
-                                        (Math.max(
-                                            this.state.finalValuation,
-                                            2500000
-                                        ) *
-                                            (100 -
-                                                this.props.simParams
-                                                    .dilution)) /
-                                            10000000,
-                                        0
-                                    ) / 100}{" "}
-                                    crores!
-                                </Segment>
-                                <Segment raised style={{ padding: "15px" }}>
-                                    
-                                </Segment>
+                              
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>

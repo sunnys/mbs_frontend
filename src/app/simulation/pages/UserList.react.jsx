@@ -11,33 +11,32 @@ export default class UserList extends PureComponent {
         this.state = {
             userList: _.map(this.props.userList, record => {
                 let data = record.user_data;
-                console.log("Data : ", record)
                 let userBasicData = {
                     id: record.id ,
-                    name: "",
+                    name: record.user.name,
                     simulation_id: data.simulation_id,
                     email: record.email,
                 }
                 let userDetailedData = {
-                    overall:
+                    ownership:
                         data.simParams.competencyMap !== undefined
-                            ? data.simParams.competencyMap.overall
+                            ? data.simParams.competencyMap.ownership
                             : "",
-                    creative:
+                    passionForExcellence:
                         data.simParams.competencyMap !== undefined
-                            ? data.simParams.competencyMap.creative
+                            ? data.simParams.competencyMap.passionForExcellence
                             : "",
-                    analytical:
+                    highPerformance:
                         data.simParams.competencyMap !== undefined
-                            ? data.simParams.competencyMap.analytical
+                            ? data.simParams.competencyMap.highPerformance
                             : "",
-                    methodical:
+                    meritocracy:
                         data.simParams.competencyMap !== undefined
-                            ? data.simParams.competencyMap.methodical
+                            ? data.simParams.competencyMap.meritocracy
                             : "",
-                    frugal:
+                    teamSpirit:
                         data.simParams.competencyMap !== undefined
-                            ? data.simParams.competencyMap.frugal
+                            ? data.simParams.competencyMap.teamSpirit
                             : ""
                 }
                 let result = _.merge(userBasicData, userDetailedData);
@@ -57,7 +56,6 @@ export default class UserList extends PureComponent {
                 id: oItem.id,
                 name: oItem.name,
                 email: oItem.email,
-                institution: oItem.simulation_id,
                 score: oItem.score
             }
             let detailedItem = {};
@@ -67,11 +65,11 @@ export default class UserList extends PureComponent {
                     detailedItem[endpoint.name] = oItem[endpoint.name]
                 });
             } else {
-                detailedItem['overall'] = oItem.overall
-                detailedItem['creative'] = oItem.creative
-                detailedItem['analytical'] = oItem.analytical
-                detailedItem['methodical'] = oItem.methodical
-                detailedItem['frugal'] = oItem.frugal
+                detailedItem['ownership'] = oItem.ownership
+                detailedItem['passionForExcellence'] = oItem.passionForExcellence
+                detailedItem['highPerformance'] = oItem.highPerformance
+                detailedItem['meritocracy'] = oItem.meritocracy
+                detailedItem['teamSpirit'] = oItem.teamSpirit
             }
             let fullItem = _.merge(basicItem, detailedItem);
             items.push(fullItem);
@@ -121,20 +119,14 @@ export default class UserList extends PureComponent {
                 minWidth: 256
             },
             {
-                Header: "Simulation",
-                id: "Simulation",
-                accessor: d => d.simulation_id,
-                minWidth: 256
-            },
-            {
                 Header: "Email",
                 id: "email",
                 accessor: d => d.email,
             },
             {
-                Header: "Score",
-                id: "overall",
-                accessor: d => d.score,
+                Header: "Ownership",
+                id: "ownership",
+                accessor: d => d.ownership,
                 filterMethod: (filter, row) => {
                     switch (filter.value) {
                         case "zero":
@@ -214,9 +206,9 @@ export default class UserList extends PureComponent {
         } else {
             detailedColumns = [
                 {
-                    Header: "Creative",
-                    id: "creative",
-                    accessor: d => d.creative,
+                    Header: "Passion For Excellence",
+                    id: "passionForExcellence",
+                    accessor: d => d.passionForExcellence,
                     filterMethod: (filter, row) => {
                         switch (filter.value) {
                             case "zero":
@@ -251,9 +243,9 @@ export default class UserList extends PureComponent {
                     style: { textAlign: "center" }
                 },
                 {
-                    Header: "Analytical",
-                    id: "analytical",
-                    accessor: d => d.analytical,
+                    Header: "High Performance",
+                    id: "highPerformance",
+                    accessor: d => d.highPerformance,
                     filterMethod: (filter, row) => {
                         switch (filter.value) {
                             case "zero":
@@ -288,9 +280,9 @@ export default class UserList extends PureComponent {
                     style: { textAlign: "center" }
                 },
                 {
-                    Header: "Methodical",
-                    id: "methodical",
-                    accessor: d => d.methodical,
+                    Header: "Meritocracy",
+                    id: "meritocracy",
+                    accessor: d => d.meritocracy,
                     filterMethod: (filter, row) => {
                         switch (filter.value) {
                             case "zero":
@@ -325,9 +317,9 @@ export default class UserList extends PureComponent {
                     style: { textAlign: "center" }
                 },
                 {
-                    Header: "Frugal",
-                    id: "frugal",
-                    accessor: d => d.frugal,
+                    Header: "Team Spirit",
+                    id: "teamSpirit",
+                    accessor: d => d.teamSpirit,
                     filterMethod: (filter, row) => {
                         switch (filter.value) {
                             case "zero":

@@ -54,9 +54,9 @@ export class AnalyticsContainer extends React.Component {
             this.props.actions.getUserData(this.props.params.id).then(data => {
                 this.setState({
                     userData: data,
-                    username: data.user.name,
+                    username: (data.user.name !== null ? data.user.name : data.user.email),
                     userCollege: data.user.email,
-                    userDesc: data.user.nickname,
+                    userDesc: (data.user.nickname !== null ? data.user.nickname : data.user.email),
                     fetchComplete: true
                 });
             });

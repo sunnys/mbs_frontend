@@ -16,23 +16,28 @@ export default class Analytics extends PureComponent {
             score: this.props.competencyMap.overall,
             competencyMap: [
                 {
-                    competency: "Analytical",
-                    actual: this.props.competencyMap.analytical,
+                    competency: "Ownership",
+                    actual: this.props.competencyMap.ownership,
                     fullMark: 100
                 },
                 {
-                    competency: "Creative",
-                    actual: this.props.competencyMap.creative,
+                    competency: "Passion For Excellence",
+                    actual: this.props.competencyMap.passionForExcellence,
                     fullMark: 100
                 },
                 {
-                    competency: "Methodical",
-                    actual: this.props.competencyMap.methodical,
+                    competency: "High Performance",
+                    actual: this.props.competencyMap.highPerformance,
                     fullMark: 100
                 },
                 {
-                    competency: "Frugal",
-                    actual: this.props.competencyMap.frugal,
+                    competency: "Meritocracy",
+                    actual: this.props.competencyMap.meritocracy,
+                    fullMark: 100
+                },
+                {
+                    competency: "Team Spirit",
+                    actual: this.props.competencyMap.teamSpirit,
                     fullMark: 100
                 }
             ],
@@ -40,8 +45,11 @@ export default class Analytics extends PureComponent {
             decisionMaking: this.props.competencyMap.decisionMaking,
             balanced: this.props.competencyMap.balanced,
             timeManagement: this.props.competencyMap.timeManagement,
-            costManagement: this.props.competencyMap.costManagement,
-            resourceful: this.props.competencyMap.resourceful
+            attributes: _.uniq(_.compact(_.flatten(_.map(this.props.questions, (question, index) => {
+                if(question.attributes !== undefined){
+                    return question.attributes
+                }
+            }))))
         };
     }
 
@@ -78,17 +86,7 @@ export default class Analytics extends PureComponent {
                         textAlign: "center"
                     }}
                 >
-                    <Segment>
-                        <h2 style={{ margin: 0 }}>AGGREGATE SCORE:</h2>
-                        <h1
-                            style={{
-                                margin: 0,
-                                fontSize: "3.2em"
-                            }}
-                        >
-                            {this.state.score}%
-                        </h1>
-                    </Segment>
+                    
                 </div>
                 <div style={{ margin: "40px 5% 20px 5%", width: "90%" }}>
                     <Divider />
@@ -191,41 +189,6 @@ export default class Analytics extends PureComponent {
                                                 />
                                                 Time Management
                                             </Grid.Column>
-                                            <Grid.Column
-                                                width={8}
-                                                style={radialContainer}
-                                            >
-                                                <QuoRadialProgressChart
-                                                    width={128}
-                                                    height={100}
-                                                    color={
-                                                        getAppConfig().colors
-                                                            .master
-                                                    }
-                                                    value={
-                                                        this.state
-                                                            .costManagement
-                                                    }
-                                                />
-                                                Cost Management
-                                            </Grid.Column>
-                                            <Grid.Column
-                                                width={8}
-                                                style={radialContainer}
-                                            >
-                                                <QuoRadialProgressChart
-                                                    width={128}
-                                                    height={100}
-                                                    color={
-                                                        getAppConfig().colors
-                                                            .master
-                                                    }
-                                                    value={
-                                                        this.state.resourceful
-                                                    }
-                                                />
-                                                Resourcefulness
-                                            </Grid.Column>
                                         </Grid.Row>
                                     </Grid>
                                 </Segment>
@@ -248,10 +211,7 @@ export default class Analytics extends PureComponent {
                 </div>
                 <Segment basic style={{ textAlign: "center" }}>
                     {_.map(
-                        this.props.questionList.slice(
-                            3,
-                            this.props.questionList.length
-                        ),
+                        this.state.attributes,
                         (question, index) => {
                             return (
                                 <Label
@@ -260,7 +220,7 @@ export default class Analytics extends PureComponent {
                                     size="big"
                                     style={{ marginBottom: "5px" }}
                                 >
-                                    {question.response}
+                                    {question}
                                 </Label>
                             );
                         }
