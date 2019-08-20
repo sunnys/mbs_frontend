@@ -40,7 +40,7 @@ export default class Surveyor extends React.Component {
         let thisAnswer = _.find(answered, { questionId: questionId });
         if (thisAnswer !== undefined)
             answered.splice(answered.indexOf(thisAnswer), 1);
-        answered.push({
+            answered.push({
             questionId: questionId,
             question: q,
             response: option === undefined ? this.state.currentInput : option,
@@ -155,7 +155,7 @@ export default class Surveyor extends React.Component {
                             <Grid.Column width={11}>
                                 <TopBar
                                     image={
-                                        "/assets/images/configurable/interview.png"
+                                        "assets/images/configurable/interview.png"
                                     }
                                     presenter={this.props.interview.presenter}
                                     constraint={"Questions Answered"}

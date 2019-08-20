@@ -106,7 +106,7 @@ export default class UserList extends PureComponent {
                         primary
                         size="mini"
                         content="View"
-                        href={`/#/analytics/${value}`}
+                        href={`/simulator/#/analytics/${value}`}
                         target = "_blank"
                     />
                 ),

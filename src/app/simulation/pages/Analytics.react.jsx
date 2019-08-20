@@ -45,7 +45,7 @@ export default class Analytics extends PureComponent {
             decisionMaking: this.props.competencyMap.decisionMaking,
             balanced: this.props.competencyMap.balanced,
             timeManagement: this.props.competencyMap.timeManagement,
-            attributes: _.uniq(_.compact(_.flatten(_.map(this.props.questions, (question, index) => {
+            attributes: _.uniq(_.compact(_.flatten(_.map(this.props.questionList, (question, index) => {
                 if(question.attributes !== undefined){
                     return question.attributes
                 }
