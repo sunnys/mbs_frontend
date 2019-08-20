@@ -74,7 +74,7 @@ export default class Surveyor extends React.Component {
                             left: "20px"
                         }}
                     >
-                        <h1>Q.{idx + 1}</h1>
+                        
                     </div>
                     <FlexBox>
                         <div style={{ width: "90%" }}>
@@ -97,20 +97,21 @@ export default class Surveyor extends React.Component {
                             )}
                             {elm.options !== undefined &&
                                 _.map(elm.options, (option, idx2) => {
-                                    console.log(option);
+                                    console.log("Answered : ", this.state.answered);
                                     let thisAnswer = _.find(
                                         this.state.answered,
                                         {
                                             questionId: elm.questionId
                                         }
                                     );
+                                    console.log("Response : ", thisAnswer)
                                     return (
                                         <Button
                                             key={`option-${idx}-${idx2}`}
                                             color={
                                                 thisAnswer !== undefined &&
                                                 thisAnswer.response ===
-                                                    option[1]
+                                                    option.option
                                                     ? "brown"
                                                     : "grey"
                                             }
